@@ -1,1 +1,1 @@
-web : gunicorn developersmeet.wsgi --log-file-
+web: gunicorn developersmeet.wsgi --log-file -
