@@ -55,7 +55,7 @@
                 const projectID=e.target.dataset.project;
                 console.log(tagID);
                 console.log(projectID);
-                fetch('http://127.0.0.1:8000/api/remove-tag/',{
+                fetch('https://developersmeet.herokuapp.com/api/remove-tag/',{
                     method:'DELETE',
                     headers:{
                         'Content-Type':'application/json'
@@ -64,7 +64,7 @@
                 })
                 .then(res=>res.json())
                 .then(data=>{
-                    console.log(data);
+                    
                     tag.remove();
                     //e.target.remove();
                     //this.remove();
