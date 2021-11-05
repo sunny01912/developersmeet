@@ -128,25 +128,25 @@ WSGI_APPLICATION = 'devsearch.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'devsearch_db2',
-        'USER':'sunny01912',
-        'PASSWORD':'24041997s',
-        'HOST':'devsearch-db2.cykia5gqee7f.us-east-2.rds.amazonaws.com',
-        'PORT':'5432'
-    }
-}
-
-
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'devsearch_db2',
+#         'USER':'sunny01912',
+#         'PASSWORD':'24041997s',
+#         'HOST':'devsearch-db2.cykia5gqee7f.us-east-2.rds.amazonaws.com',
+#         'PORT':'5432'
 #     }
 # }
+
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 # Password validation
