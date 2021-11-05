@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+body{
+    background-color:gainsboro;
+    height: 100%;
+    color:gray;
+    font-size: 1.2rem;
+}
+
+.wrapper{
+    padding-top: 1rem;
+    width: 75vw;
+    height: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    background: white;
+}
+
+.img-container{
+    width: 250px;
+    height: 250px;
+}
+img{
+    width: 100%;
+}
+.inner-card{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding-right: 2rem;
+  
+}
+.card-text{
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+    
+
+    
+}
+
+.vote-btn{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+}
+span{
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.title{
+    color: black;
+}
+
+span:hover{
+    color: black;
+}
+
+a{
+    text-decoration: none;
+    color: gray;
+}
+a:hover{
+    color: black;
+}

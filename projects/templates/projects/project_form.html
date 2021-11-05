@@ -1,0 +1,79 @@
+{% extends 'main.html' %}
+{% block content %}
+
+
+
+    <!-- Main Section -->
+    <main class="formPage my-xl">
+        <div class="content-box">
+            <div class="formWrapper">
+                <a class="backButton" href="{% url 'account' %}"><i class="im im-angle-left"></i></a>
+                <br>
+
+                <form class="form" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+               
+                    {% for field in form %}
+                  
+                    <div class="form__field">
+                    <label for="{{field.id_for_label}}">{{field.label}}</label>
+                       {{field}}
+                    </div>
+                    {% endfor %}
+
+                    <div class="form__field">
+                        {% for tag in project.tags.all %}
+                            <div class="project-tag tag tag--pill tag--main" data-tag="{{tag.id}}" data-project="{{project.id}}">{{tag}} &#215;</div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="form__field">
+
+                        <label for="tag_id">Tags</label>
+                        <textarea name="newtags" id="" cols="30" rows="5" id='tag_id' class="input" placeholder="add tags here.."></textarea>
+
+                    </div>
+
+
+
+                   
+
+                    
+                    <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+    <script>
+        const tags=document.querySelectorAll(".project-tag");
+        for(let tag of tags){
+            tag.addEventListener('click',(e)=>{
+
+                const tagID=e.target.dataset.tag;
+                const projectID=e.target.dataset.project;
+                console.log(tagID);
+                console.log(projectID);
+                fetch('http://127.0.0.1:8000/api/remove-tag/',{
+                    method:'DELETE',
+                    headers:{
+                        'Content-Type':'application/json'
+                    },
+                    body:JSON.stringify({tag:tagID,project:projectID})
+                })
+                .then(res=>res.json())
+                .then(data=>{
+                    console.log(data);
+                    tag.remove();
+                    //e.target.remove();
+                    //this.remove();
+                })
+
+            })
+        }
+    </script>
+ 
+{% endblock content %}
+
+

@@ -1,0 +1,53 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+<main class="formPage my-xl">
+  <div class="content-box">
+    <div class="formWrapper">
+      <a class="backButton" href="{% url 'user-profile' recipient.id %}"><i class="im im-angle-left"></i></a>
+      <br />
+
+      <form
+        action=""
+        method="post"
+        
+      >
+        {% csrf_token %}
+        {% if request.user.is_authenticated == False %}
+        <div class="form__field">
+        {{form.name.label_tag}}
+        {{form.name}}
+        </div>
+          <div class="form__field">
+        {{form.email.label_tag}}
+        {{form.email}}
+        </div>
+      {% endif %}
+
+        <div class="form__field">
+        {{form.subject.label_tag}}
+        {{form.subject}}
+        </div>
+          <div class="form__field">
+        {{form.body.label_tag}}
+        {{form.body}}
+        </div>
+       
+
+        <input
+          class="btn btn--sub btn--lg my-md"
+          type="submit"
+          value="Submit"
+        />
+      </form>
+    </div>
+  </div>
+</main>
+
+
+{% endblock content %}
+
+
+
