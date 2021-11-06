@@ -128,23 +128,23 @@ WSGI_APPLICATION = 'devsearch.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
+
+
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'devsearch_db2',
-#         'USER':'sunny01912',
-#         'PASSWORD':'24041997s',
-#         'HOST':'devsearch-db2.cykia5gqee7f.us-east-2.rds.amazonaws.com',
-#         'PORT':'5432'
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd9ati7o5nbguhr',
+        'USER':'iaqfxqruutkdft',
+        'PASSWORD':'a9340f2c54a61aab649417c808246c3f82d18e25deff0b8fbbf1ebe5ae2ff4ef',
+        'HOST':'ec2-34-194-100-156.compute-1.amazonaws.com',
+        'PORT':'5432'
     }
 }
 
@@ -222,11 +222,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-# AWS_ACCESS_KEY_ID='AKIAS4CB45WN3AP5GR64'
-AWS_ACCESS_KEY_ID=os.environ.get('AWS_ACCESS_KEY_ID')
 
-# AWS_SECRET_ACCESS_KEY='z6asv4WSVrDx1EmdgYJQPjaeYDdKw3MOUPZ9Hb6Z'
-AWS_SECRET_ACCESS_KEY=os.environ.get('AWS_SECRET_ACCESS_KEY')
+# AWS_ACCESS_KEY_ID=os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_ACCESS_KEY_ID='AKIAS4CB45WN3AP5GR64'
+
+
+# AWS_SECRET_ACCESS_KEY=os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_SECRET_ACCESS_KEY='z6asv4WSVrDx1EmdgYJQPjaeYDdKw3MOUPZ9Hb6Z'
 
 AWS_STORAGE_BUCKET_NAME='devsearch-static-bucket'
 AWS_QUERYSTRING_AUTH=False
