@@ -7,7 +7,6 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .utils import searchProjects,paginationProjects
 from django.contrib import messages
-
 # Create your views here.
 
 
@@ -40,6 +39,7 @@ def project(request,pk):
     
 @login_required(login_url="login")
 def  createProject(request):
+    
     form=ProjectForm()
     profile=request.user.profile
 
